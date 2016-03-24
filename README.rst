@@ -41,7 +41,7 @@ Now you can get the catalog of detections as:
 ::
 
 
-    detections = c.get_detections()
+    detections = c.get_catalog_of_detections()
 
 By default the detections are selected requiring a final TS >= 25 and at
 least 3 events with a probability larger than 90% of belonging to the
@@ -52,7 +52,7 @@ events with a probability larger than 90% of belonging to the trigger:
 ::
 
 
-    custom_detections = c.get_detections("Final_TS >= 30","GRB_events >= 10")
+    custom_detections = c.get_catalog_of_detections("Final_TS >= 30","GRB_events >= 10")
 
 Once you have your catalog of detections, you can loop over them by
 doing:
