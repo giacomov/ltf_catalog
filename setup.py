@@ -4,28 +4,16 @@ setup(
     
     name="ltf_catalog",
     
-    packages = ["pyggop","pyggop/config"],
+    packages = ["ltf_catalog"],
+        
+    version = 'v0.1',
     
-    package_data = { "pyggop/config": ['configuration.json'] },
+    description = "Read the results of the LAT Transient Factory triggered algorithm",
     
-    version = 'v1.0.0',
-    
-    description = "Generates templates for pair production opacity in relativistic sources",
-    
-    author = 'Johann Cohen-Tanugi, Giacomo Vianello, Jonathan Granot',
+    author = 'Giacomo Vianello (Stanford University)',
     
     author_email = 'giacomo.vianello@gmail.com',
-        
-    ext_modules=  cythonize(extensions, 
-                            compiler_directives={'cdivision': True}),
-    
-    
-    scripts=['bin/makeggtemplate.py'],
-    
-    headers=[],
-    
-    install_requires=['numpy',
-                      'scipy',
-                      'cython']
+
+    install_requires=['numpy']
 
 )
