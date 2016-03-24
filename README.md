@@ -71,3 +71,6 @@ for trigger in detections.iteritems():
     print("Name: %s, maximum TS: %s" % (trigger.name, trigger.maximum_TS))
 
 ```
+
+To see all methods and properties of the catalog and the triggers, see the API
+documentation at http://ltf-catalog.readthedocs.org/
