@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# Astromodels documentation build configuration file, created by
-# sphinx-quickstart on Mon Feb 15 11:54:33 2016.
+# ltf_catalog documentation build configuration file, created by
+# sphinx-quickstart on Thu Mar 24 16:05:17 2016.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -16,30 +16,12 @@ import sys
 import os
 import shlex
 
-try:
-
-    from mock import Mock as MagicMock
-
-except ImportError:
-
-    # We are not running in the readthedocs environment
-    pass
-
-else:
-
-    class Mock(MagicMock):
-        @classmethod
-        def __getattr__(cls, name):
-                return Mock()
-
-    MOCK_MODULES = ['numpy']
-    sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
-
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.abspath('..'))
-sys.path.insert(1, os.path.abspath('../ltf_catalog'))
+sys.path.insert(0, os.path.abspath('../ltf_catalog'))
+#sys.path.insert(0, os.path.abspath('.'))
 
 # -- General configuration ------------------------------------------------
 
@@ -61,7 +43,7 @@ templates_path = ['_templates']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 # source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = ['.rst', '.md']
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
@@ -70,7 +52,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Astromodels'
+project = u'ltf_catalog'
 copyright = u'2016, Giacomo Vianello (giacomov@stanford.edu)'
 author = u'Giacomo Vianello (giacomov@stanford.edu)'
 
@@ -132,7 +114,7 @@ todo_include_todos = False
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#html_theme = 'alabaster'
+html_theme = 'alabaster'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -224,7 +206,7 @@ html_static_path = ['_static']
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Astromodelsdoc'
+htmlhelp_basename = 'ltf_catalogdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -246,7 +228,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'Astromodels.tex', u'Astromodels Documentation',
+  (master_doc, 'ltf_catalog.tex', u'ltf\\_catalog Documentation',
    u'Giacomo Vianello (giacomov@stanford.edu)', 'manual'),
 ]
 
@@ -276,7 +258,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'astromodels', u'Astromodels Documentation',
+    (master_doc, 'ltf_catalog', u'ltf_catalog Documentation',
      [author], 1)
 ]
 
@@ -290,8 +272,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'Astromodels', u'Astromodels Documentation',
-   author, 'Astromodels', 'One line description of project.',
+  (master_doc, 'ltf_catalog', u'ltf_catalog Documentation',
+   author, 'ltf_catalog', 'One line description of project.',
    'Miscellaneous'),
 ]
 
