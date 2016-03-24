@@ -19,9 +19,12 @@ import shlex
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-sys.path.insert(0, os.path.abspath('.'))
-sys.path.insert(0, os.path.abspath('../ltf_catalog'))
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+if not on_rtd:
+    import sys
 
+    sys.path.insert(0, '..')
+    sys.path.insert(0, '../ltf_catalog')
 
 # -- General configuration ------------------------------------------------
 
@@ -34,7 +37,11 @@ sys.path.insert(0, os.path.abspath('../ltf_catalog'))
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
+    'sphinx.ext.autosummary'
 ]
+
+autoclass_content = 'both'
+autosummary_generate = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
