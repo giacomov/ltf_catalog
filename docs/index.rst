@@ -11,7 +11,9 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-
+.. automodule:: ltf_catalog
+   :members:
+   :undoc-members:
 
 Indices and tables
 ==================
