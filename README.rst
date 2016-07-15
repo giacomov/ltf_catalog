@@ -72,7 +72,7 @@ So for example, this will print all the available information:
     for trigger in detections.iteritems():
         
         for det in detections.iteritems():
-    print("%s %s %s %s %s %s %s %s" %(det.name, det.trigger_time, det.date, det.gcn_type,
+            print("%s %s %s %s %s %s %s %s" %(det.name, det.trigger_time, det.date, det.gcn_type,
                                       det.get_longest_time_scale_with_detection(), det.time_scale_with_largest_TS,
                                       det.maximum_TS, det.get_position_with_smallest_error()))
 
