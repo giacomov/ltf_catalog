@@ -64,15 +64,17 @@ doing:
         
         [do your processing here]
 
-So for example, this will print all the names and their maximum TS of
-the triggers:
+So for example, this will print all the available information:
 
 ::
 
 
     for trigger in detections.iteritems():
         
-        print("Name: %s, maximum TS: %s" % (trigger.name, trigger.maximum_TS))
+        for det in detections.iteritems():
+    print("%s %s %s %s %s %s %s %s" %(det.name, det.trigger_time, det.date, det.gcn_type,
+                                      det.get_longest_time_scale_with_detection(), det.time_scale_with_largest_TS,
+                                      det.maximum_TS, det.get_position_with_smallest_error()))
 
 To see all methods and properties of the catalog and the triggers, see
 the API documentation at http://ltf-catalog.readthedocs.org/
