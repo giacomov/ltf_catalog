@@ -149,6 +149,19 @@ class TriggerResults(object):
 
         return self.windows['Final_TS'][id]
 
+    @property
+    def n_events_above_90_percent(self):
+        """
+        Returns the number of events with a probability of belonging to the GRB > 0.9 (according to gtsrcprob),
+        in the time interval with the maximum TS
+
+        :return: number of events
+        """
+
+        id = self.windows['Final_TS'].argmax()
+
+        return self.windows['GRB_events'][id]
+
     def get_position_with_smallest_error(self, TS = 25):
         """
         Returns the position with the smallest error among all the time scales where
